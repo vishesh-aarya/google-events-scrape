@@ -4,7 +4,7 @@ from playwright.async_api import async_playwright
 
 # Define input and output CSV file paths
 INPUT_CSV = "google_cloud_events_regions.csv"
-OUTPUT_CSV = "events_url_23dec.csv"
+OUTPUT_CSV = "events_url.csv"
 
 async def scrape_urls():
     # Load the input CSV
