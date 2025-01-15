@@ -30,12 +30,21 @@ def scrape_events(url):
         
         # Extract the event type (online, live, etc.)
         event_type = event.find_element(By.XPATH, ".//div[@class='aNvNV']").text
+
+        #extract the event url
+        event_url = event.find_element(By.XPATH, ".//a[@class='aOrzRd yIs5hd']").get_attribute("href")
+
+        #extract the event description
+        # Extract the description
+        event_description = event.find_element(By.XPATH, ".//div[@class='Y1Fktf']").text
         
         # Add the extracted data to the list
         event_data.append({
             "title": title,
             "date": date,
-            "type": event_type
+            "type": event_type,
+            "url" : event_url,
+            "description" : event_description
         })
 
     # Close the browser window
